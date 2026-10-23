@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridad | Tecnologías de la información</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar" aria-label="Principal">
+            <div class="logo" id="loguito">
+                <img src="img/logo.png" width="80" height="70" alt="Logo del Sagrado Corazón de Jesús">
+            </div>
+
+            <ul class="nav-links" id="paginas">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Ciberseguridad.html" aria-current="page">Ciberseguridad</a></li>
+                <li><a href="Programacion.html">Programación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="hero">
+            <h1>Ciberseguridad</h1>
+            <img src="img/escudo.png" alt="Escudo" width="300">
+        </div>
+
+        <nav class="indice" aria-label="En esta página">
+            <ul>
+                <li><a href="#que-es">¿Qué es?</a></li>
+                <li><a href="#amenazas">Amenazas</a></li>
+                <li><a href="#contrasena">Prueba tu contraseña</a></li>
+                <li><a href="#defensa">Cómo protegerte</a></li>
+                <li><a href="#glosario">Glosario</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#preguntas">Preguntas frecuentes</a></li>
+            </ul>
+        </nav>
+
+        <section id="que-es" class="reveal">
+            <h2>¿Qué es la Ciberseguridad?</h2>
+            <p>La ciberseguridad es la rama de la informática que se encarga de proteger los sistemas, las redes, los dispositivos y los datos frente a accesos no autorizados, robos o daños. Su objetivo es cuidar tres cosas: que la información sea confidencial (solo la ve quien debe), íntegra (nadie la altera sin permiso) y disponible (se puede usar cuando hace falta).</p>
+            <p>Hoy está presente en todo: desde el pin de tu celular hasta los sistemas de los bancos, los hospitales y las escuelas.</p>
+        </section>
+
+        <section id="amenazas" class="reveal">
+            <div class="media">
+                <div class="media-texto">
+                    <h2>Amenazas más comunes</h2>
+                    <h3>Filtra por tipo</h3>
+                    <div class="herramientas" role="group" aria-label="Filtrar amenazas">
+                        <button class="chip" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+                        <button class="chip" type="button" data-filtro="engano" aria-pressed="false">Engaño</button>
+                        <button class="chip" type="button" data-filtro="software" aria-pressed="false">Software malicioso</button>
+                        <button class="chip" type="button" data-filtro="red" aria-pressed="false">Redes</button>
+                    </div>
+                    <div class="rejilla" id="lista-amenazas">
+                        <article class="tarjeta" data-tipo="engano">
+                            <span class="etiqueta">Engaño</span>
+                            <h3>Phishing</h3>
+                            <p>Mensajes falsos que imitan a un banco o una empresa para que entregues contraseñas o datos. Desconfía de la urgencia y de los enlaces raros.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="engano">
+                            <span class="etiqueta">Engaño</span>
+                            <h3>Ingeniería social</h3>
+                            <p>Manipular a las personas, no a las máquinas, para que revelen información. Se aprovecha de la confianza, el miedo o las ganas de ayudar.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="software">
+                            <span class="etiqueta">Software malicioso</span>
+                            <h3>Malware</h3>
+                            <p>Programas creados para dañar o espiar un equipo: virus, troyanos, spyware. Suelen llegar en archivos adjuntos o descargas no oficiales.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="software">
+                            <span class="etiqueta">Software malicioso</span>
+                            <h3>Ransomware</h3>
+                            <p>Cifra los archivos de la víctima y pide un pago para devolverlos. La mejor defensa es tener copias de seguridad actualizadas.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="red">
+                            <span class="etiqueta">Redes</span>
+                            <h3>Ataque DDoS</h3>
+                            <p>Saturar un sitio con una cantidad enorme de visitas falsas para que deje de funcionar para los usuarios reales.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="red">
+                            <span class="etiqueta">Redes</span>
+                            <h3>Wi-Fi público inseguro</h3>
+                            <p>En redes abiertas otra persona podría interceptar lo que envías. Evita entrar a cuentas importantes o usa una VPN.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contrasena" class="reveal">
+            <h2>Prueba qué tan segura es una contraseña</h2>
+            <p>Escribe una contraseña de ejemplo (no uses una real). El análisis se hace en tu navegador y no se guarda ni se envía a ningún lado.</p>
+            <input type="password" id="clave" placeholder="Escribe una contraseña de prueba" autocomplete="off" aria-label="Contraseña de prueba">
+            <button class="btn" type="button" id="ver-clave">Mostrar</button>
+            <div class="medidor" aria-hidden="true"><span id="barra"></span></div>
+            <p id="nivel" aria-live="polite">Nivel: —</p>
+            <ul class="requisitos" id="requisitos">
+                <li data-req="largo">Al menos 12 caracteres</li>
+                <li data-req="mayus">Una letra mayúscula</li>
+                <li data-req="minus">Una letra minúscula</li>
+                <li data-req="num">Un número</li>
+                <li data-req="simbolo">Un símbolo (por ejemplo ! ? # $)</li>
+            </ul>
+        </section>
+
+        <section id="defensa" class="reveal">
+            <div class="media">
+                <div class="media-texto">
+                    <h2>Cómo protegerte</h2>
+                    <h3>Buenos hábitos digitales</h3>
+                    <ul class="prompt-lista">
+                        <li><strong>Contraseñas largas y únicas:</strong> una distinta para cada cuenta, guardadas en un gestor de contraseñas.</li>
+                        <li><strong>Verificación en dos pasos:</strong> activa un segundo factor (código o app) en tus cuentas importantes.</li>
+                        <li><strong>Actualizaciones:</strong> instala los parches del sistema y de las aplicaciones apenas estén disponibles.</li>
+                        <li><strong>Copias de seguridad:</strong> guarda tus archivos importantes en otro lugar, por si pierdes el equipo.</li>
+                        <li><strong>Piensa antes de hacer clic:</strong> revisa el remitente y la dirección real de los enlaces.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="glosario" class="glosario reveal">
+            <h2>Glosario de ciberseguridad</h2>
+            <div class="herramientas">
+                <input type="search" id="buscador" placeholder="Buscar un término..." aria-label="Buscar en el glosario">
+            </div>
+            <dl>
+                <div class="termino">
+                    <dt>Firewall (cortafuegos)</dt>
+                    <dd>Sistema que controla qué conexiones entran y salen de una red o un equipo, bloqueando las sospechosas.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Cifrado</dt>
+                    <dd>Técnica que transforma la información en un código ilegible para que solo pueda leerla quien tiene la clave correcta.</dd>
+                </div>
+                <div class="termino">
+                    <dt>VPN</dt>
+                    <dd>Red privada virtual: crea un túnel cifrado entre tu dispositivo e Internet para proteger lo que envías, sobre todo en redes públicas.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Autenticación en dos pasos (2FA)</dt>
+                    <dd>Método que pide dos pruebas de identidad, por ejemplo la contraseña y un código enviado a tu celular.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Antivirus</dt>
+                    <dd>Programa que detecta, bloquea y elimina software malicioso en un dispositivo.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Parche de seguridad</dt>
+                    <dd>Actualización que corrige una vulnerabilidad descubierta en un programa o sistema operativo.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Hash</dt>
+                    <dd>Huella digital de un dato obtenida con una función matemática. Se usa, por ejemplo, para guardar contraseñas sin almacenarlas en texto plano.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Vulnerabilidad</dt>
+                    <dd>Falla o debilidad en un sistema que podría ser aprovechada para causar un daño.</dd>
+                </div>
+            </dl>
+            <p class="vacio" id="vacio-glosario">No se encontraron términos con esa búsqueda.</p>
+        </section>
+
+        <section id="quiz" class="reveal">
+            <h2>Pon a prueba lo que aprendiste</h2>
+            <div class="quiz" data-quiz>
+                <div class="pregunta">
+                    <h3>1. Recibes un mensaje que dice "¡Tu cuenta será bloqueada hoy! Ingresa aquí". ¿Qué haces?</h3>
+                    <div class="opciones">
+                        <button class="opcion" type="button">Hago clic rápido para evitar el bloqueo</button>
+                        <button class="opcion" type="button" data-ok>Entro a la página oficial escribiendo yo la dirección</button>
+                        <button class="opcion" type="button">Reenvío el mensaje a mis amigos</button>
+                    </div>
+                    <p class="explicacion">Los mensajes con mucha urgencia son una señal típica de phishing. Lo seguro es entrar por tu cuenta al sitio oficial.</p>
+                </div>
+                <div class="pregunta">
+                    <h3>2. ¿Qué te protege mejor si un ransomware cifra tus archivos?</h3>
+                    <div class="opciones">
+                        <button class="opcion" type="button">Pagar el rescate de inmediato</button>
+                        <button class="opcion" type="button">Apagar el Wi-Fi y esperar</button>
+                        <button class="opcion" type="button" data-ok>Tener copias de seguridad guardadas aparte</button>
+                    </div>
+                    <p class="explicacion">Con una copia de seguridad reciente puedes restaurar tus archivos sin depender de los atacantes.</p>
+                </div>
+                <div class="pregunta">
+                    <h3>3. ¿Cuál de estas contraseñas es la más segura?</h3>
+                    <div class="opciones">
+                        <button class="opcion" type="button">123456</button>
+                        <button class="opcion" type="button">NombreMascota2010</button>
+                        <button class="opcion" type="button" data-ok>Tres-Gatos_Azules_Cantan!</button>
+                    </div>
+                    <p class="explicacion">Una frase larga, con mayúsculas, símbolos y sin datos personales, es mucho más difícil de adivinar.</p>
+                </div>
+                <p class="resultado" aria-live="polite"></p>
+                <div><button class="btn" type="button" data-reiniciar>Reiniciar quiz</button></div>
+            </div>
+        </section>
+
+        <section id="preguntas" class="faq reveal">
+            <h2>Preguntas frecuentes</h2>
+
+            <details>
+                <summary>¿Con tener antivirus ya estoy 100% protegido?</summary>
+                <div>
+                    <p>No. El antivirus ayuda mucho, pero no frena un engaño. Si tú mismo entregas tu contraseña en una página falsa, ningún programa puede evitarlo. La seguridad combina herramientas y buenos hábitos.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>¿Es seguro usar el mismo password en varias cuentas?</summary>
+                <div>
+                    <p>No es recomendable. Si una de esas páginas sufre una filtración, los atacantes probarán esa misma clave en tus otras cuentas. Lo ideal es tener una contraseña distinta para cada servicio.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>¿Qué es un hacker? ¿Todos son delincuentes?</summary>
+                <div>
+                    <p>Un hacker es una persona con grandes conocimientos técnicos. Los hackers éticos (o "de sombrero blanco") buscan fallas con permiso de las empresas para corregirlas antes de que las aproveche un delincuente. Es incluso una profesión.</p>
+                </div>
+            </details>
+        </section>
+
+    </main>
+
+    <button id="subir" type="button" aria-label="Volver arriba">↑</button>
+
+    <footer>
+        <p>Página realizada por Lara Nuñez y Francesca Barbieri de 4°B</p>
+    </footer>
+
+</body>
+</html>

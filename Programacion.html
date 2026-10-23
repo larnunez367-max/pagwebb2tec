@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación | Tecnologías de la información</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar" aria-label="Principal">
+            <div class="logo" id="loguito">
+                <img src="img/logo.png" width="80" height="70" alt="Logo del Sagrado Corazón de Jesús">
+            </div>
+
+            <ul class="nav-links" id="paginas">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Ciberseguridad.html">Ciberseguridad</a></li>
+                <li><a href="Programacion.html" aria-current="page">Programación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="hero">
+            <h1>La informática y la programación</h1>
+            <img src="img/ee.jpg" alt="Codigo en Python" width="300">
+        </div>
+
+        <nav class="indice" aria-label="En esta página">
+            <ul>
+                <li><a href="#que-es">¿Qué es programar?</a></li>
+                <li><a href="#lenguajes">Lenguajes</a></li>
+                <li><a href="#codigo">Ejemplos de código</a></li>
+                <li><a href="#practica">Practica un bucle</a></li>
+                <li><a href="#glosario">Glosario</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#estudio">Estudio</a></li>
+            </ul>
+        </nav>
+
+        <section id="que-es" class="reveal">
+            <h2>¿Qué es programar?</h2>
+            <p>Programar es escribir instrucciones precisas, en un lenguaje que la computadora pueda entender, para resolver un problema o automatizar una tarea. Todo lo que usas a diario, como una app de mensajes, un videojuego o una página web, es un programa escrito por personas.</p>
+            <p>Antes de escribir una sola línea de código, un programador piensa en un algoritmo: los pasos ordenados que llevan de un problema a su solución. La computadora hace exactamente lo que se le pide, ni más ni menos, por eso los errores (llamados bugs) forman parte del trabajo diario.</p>
+        </section>
+
+        <section id="lenguajes" class="reveal">
+            <div class="media">
+                    <h2>Lenguajes de programación</h2>
+                    <h3>Filtra por área</h3>
+                    <div class="herramientas" role="group" aria-label="Filtrar lenguajes">
+                        <button class="chip" type="button" data-filtro="todas" aria-pressed="true">Todos</button>
+                        <button class="chip" type="button" data-filtro="web" aria-pressed="false">Web</button>
+                        <button class="chip" type="button" data-filtro="datos" aria-pressed="false">Datos e IA</button>
+                        <button class="chip" type="button" data-filtro="sistemas" aria-pressed="false">Sistemas</button>
+                    </div>
+                    <div class="rejilla" id="lista-lenguajes">
+                        <article class="tarjeta" data-tipo="web">
+                            <span class="etiqueta">Web</span>
+                            <h3>JavaScript</h3>
+                            <p>El lenguaje de la web: hace que las páginas respondan a tus clics. Esta misma página lo usa.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="web">
+                            <span class="etiqueta">Web</span>
+                            <h3>HTML y CSS</h3>
+                            <p>No son lenguajes de programación en sentido estricto: HTML da estructura a la página y CSS define su aspecto.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="datos">
+                            <span class="etiqueta">Datos e IA</span>
+                            <h3>Python</h3>
+                            <p>Muy legible y fácil de aprender. Es el favorito para análisis de datos, automatización e inteligencia artificial.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="datos">
+                            <span class="etiqueta">Datos e IA</span>
+                            <h3>SQL</h3>
+                            <p>Lenguaje para consultar y administrar bases de datos: "dame todos los alumnos de 4°B".</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="sistemas">
+                            <span class="etiqueta">Sistemas</span>
+                            <h3>C y C++</h3>
+                            <p>Muy rápidos y cercanos al hardware. Se usan en sistemas operativos, videojuegos y dispositivos embebidos.</p>
+                        </article>
+                        <article class="tarjeta" data-tipo="sistemas">
+                            <span class="etiqueta">Sistemas</span>
+                            <h3>Java</h3>
+                            <p>Muy usado en aplicaciones empresariales y en Android. Su lema es escribir el programa una vez y ejecutarlo en cualquier lugar.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="codigo" class="reveal">
+            <h2>El clásico "Hola, mundo" en distintos lenguajes</h2>
+            <p>Es el primer programa que se escribe al aprender. Elige un lenguaje y compara cómo cambia la forma de escribir lo mismo.</p>
+            <div class="tabs" role="tablist" aria-label="Lenguajes de ejemplo">
+                <button class="tab" type="button" role="tab" aria-selected="true" data-lang="python">Python</button>
+                <button class="tab" type="button" role="tab" aria-selected="false" data-lang="js">JavaScript</button>
+                <button class="tab" type="button" role="tab" aria-selected="false" data-lang="java">Java</button>
+                <button class="tab" type="button" role="tab" aria-selected="false" data-lang="c">C</button>
+            </div>
+            <pre class="codigo" id="bloque-codigo"><code>print("Hola, mundo")</code></pre>
+            <button class="btn" type="button" id="copiar-codigo">Copiar código</button>
+        </section>
+
+        <section id="practica" class="reveal">
+            <h2>Practica un bucle: FizzBuzz</h2>
+            <p>Es un ejercicio muy famoso en entrevistas de programación. Se cuenta del 1 hasta el número que elijas: si es múltiplo de 3 se escribe "Fizz", si es múltiplo de 5 se escribe "Buzz", y si lo es de ambos, "FizzBuzz".</p>
+            <div class="herramientas">
+                <input type="number" id="limite" min="1" max="100" value="15" aria-label="Número final (de 1 a 100)">
+                <button class="btn btn-principal" type="button" id="ejecutar">▶ Ejecutar</button>
+            </div>
+            <pre class="codigo"><code>for (let i = 1; i &lt;= n; i++) {
+                if (i % 15 === 0) salida = "FizzBuzz";
+                else if (i % 3 === 0) salida = "Fizz";
+                else if (i % 5 === 0) salida = "Buzz";
+                else salida = i;
+}
+</code></pre>
+            <div class="salida" id="salida-fizz" aria-live="polite">Presiona "Ejecutar" para ver el resultado.</div>
+        </section>
+
+        <section id="glosario" class="glosario reveal">
+            <h2>Glosario de programación</h2>
+            <div class="herramientas">
+                <input type="search" id="buscador" placeholder="Buscar un término..." aria-label="Buscar en el glosario">
+            </div>
+            <dl>
+                <div class="termino">
+                    <dt>Algoritmo</dt>
+                    <dd>Conjunto de pasos ordenados y finitos para resolver un problema. Una receta de cocina es un algoritmo.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Variable</dt>
+                    <dd>Espacio con nombre donde el programa guarda un dato que puede cambiar, como el puntaje de un juego.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Bucle (loop)</dt>
+                    <dd>Estructura que repite un bloque de instrucciones varias veces, ya sea un número fijo o mientras se cumpla una condición.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Condicional</dt>
+                    <dd>Estructura que permite al programa tomar decisiones: "si pasa esto, haz aquello; si no, haz otra cosa".</dd>
+                </div>
+                <div class="termino">
+                    <dt>Función</dt>
+                    <dd>Bloque de código con nombre que realiza una tarea y se puede reutilizar cuantas veces se necesite.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Bug</dt>
+                    <dd>Error en un programa que produce un resultado inesperado. Encontrarlos y corregirlos se llama depurar (debugging).</dd>
+                </div>
+                <div class="termino">
+                    <dt>API</dt>
+                    <dd>Interfaz que permite que dos programas se comuniquen entre sí, por ejemplo una app del clima que pide datos a un servidor.</dd>
+                </div>
+                <div class="termino">
+                    <dt>Git</dt>
+                    <dd>Sistema de control de versiones que guarda el historial de cambios del código y facilita trabajar en equipo.</dd>
+                </div>
+            </dl>
+            <p class="vacio" id="vacio-glosario">No se encontraron términos con esa búsqueda.</p>
+        </section>
+
+        <section id="quiz" class="reveal">
+            <h2>Pon a prueba lo que aprendiste</h2>
+            <div class="quiz" data-quiz>
+                <div class="pregunta">
+                    <h3>1. ¿Cómo se llama el conjunto de pasos ordenados para resolver un problema?</h3>
+                    <div class="opciones">
+                        <button class="opcion" type="button">Compilador</button>
+                        <button class="opcion" type="button" data-ok>Algoritmo</button>
+                        <button class="opcion" type="button">Variable</button>
+                    </div>
+                    <p class="explicacion">Un algoritmo describe los pasos a seguir, y luego se traduce a un lenguaje de programación.</p>
+                </div>
+                <div class="pregunta">
+                    <h3>2. ¿Qué estructura se usa para repetir instrucciones?</h3>
+                    <div class="opciones">
+                        <button class="opcion" type="button" data-ok>Un bucle</button>
+                        <button class="opcion" type="button">Un comentario</button>
+                        <button class="opcion" type="button">Una API</button>
+                    </div>
+                    <p class="explicacion">Los bucles (for, while) repiten un bloque de código sin tener que escribirlo muchas veces.</p>
+                </div>
+                <div class="pregunta">
+                    <h3>3. ¿Qué lenguaje se usa para consultar bases de datos?</h3>
+                    <div class="opciones">
+                        <button class="opcion" type="button">CSS</button>
+                        <button class="opcion" type="button">C++</button>
+                        <button class="opcion" type="button" data-ok>SQL</button>
+                    </div>
+                    <p class="explicacion">SQL significa Structured Query Language (lenguaje de consulta estructurado).</p>
+                </div>
+                <p class="resultado" aria-live="polite"></p>
+                <div><button class="btn" type="button" data-reiniciar>Reiniciar quiz</button></div>
+            </div>
+        </section>
+
+        <section id="estudio" class="glosario reveal">
+            <div class="media">
+                <div class="media-texto">
+                    <h2>Estudio</h2>
+                    <h3>Carreras</h3>
+                    <dl>
+                        <div class="termino">
+                            <dt>Ingeniería en Sistemas / Informática</dt>
+                            <dd>Forma profesionales que diseñan, desarrollan y mantienen software y sistemas informáticos completos.</dd>
+                        </div>
+                        <div class="termino">
+                            <dt>Licenciatura en Ciencias de la Computación</dt>
+                            <dd>Se enfoca en la teoría: algoritmos, matemática, lógica y el funcionamiento profundo de los programas.</dd>
+                        </div>
+                        <div class="termino">
+                            <dt>Tecnicatura en Desarrollo de Software</dt>
+                            <dd>Carrera corta y práctica para aprender a programar aplicaciones y sitios web y salir rápido al mundo laboral.</dd>
+                        </div>
+                        <div class="termino">
+                            <dt>Ciencia de Datos</dt>
+                            <dd>Combina estadística y programación para analizar grandes volúmenes de datos y obtener conclusiones útiles.</dd>
+                        </div>
+                        <div class="termino">
+                            <dt>Ciberseguridad</dt>
+                            <dd>Prepara especialistas para proteger sistemas y redes, detectar vulnerabilidades y responder ante incidentes.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="subir" type="button" aria-label="Volver arriba">↑</button>
+
+    <footer>
+        <p>Página realizada por Lara Nuñez y Francesca Barbieri de 4°B</p>
+    </footer>
+</body>
+</html>
